@@ -1,5 +1,6 @@
 {
   "name": "@marcXandre/team-directory",
+  "license" : "BSD-3-Clause",
   "version": "0.1.0",
   "private": true,
   "scripts": {

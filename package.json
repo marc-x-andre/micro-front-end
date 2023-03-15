@@ -1,5 +1,6 @@
 {
   "name": "@marcXandre/root-config",
+  "license" : "BSD-3-Clause",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js",
@@ -9,7 +10,7 @@
     "prepare": "husky install",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
-    "build:subpkg": "subpkg run build:parent"
+    "build:subpkg": "subpkg install && subpkg run build:parent"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
