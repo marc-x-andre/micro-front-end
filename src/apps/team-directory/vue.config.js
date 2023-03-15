@@ -5,6 +5,8 @@ module.exports = defineConfig({
     externals: ["com1"],
     output: {
       libraryTarget: "system",
+      filename: "js/[name].js",
+      chunkFilename: "js/[name].js",
     },
   },
 });
