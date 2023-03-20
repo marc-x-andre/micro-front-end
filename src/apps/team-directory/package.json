@@ -1,6 +1,6 @@
 {
   "name": "@marcXandre/team-directory",
-  "license" : "BSD-3-Clause",
+  "license": "BSD-3-Clause",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "serve:standalone": "vue-cli-service serve --mode standalone"
   },
   "dependencies": {
+    "@vicons/ionicons5": "^0.12.0",
     "core-js": "^3.8.3",
     "single-spa-vue": "^2.1.0",
     "vue": "^3.2.13"
@@ -23,6 +24,7 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "naive-ui": "^2.34.3",
     "vue-cli-plugin-single-spa": "~3.3.0"
   },
   "eslintConfig": {

@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <n-config-provider :theme-overrides="theme">
+  <div class="page">
+    <div class="container">
+      <h1>Slack Message Maker</h1>
+      <SlackMR />
+    </div>
+  </div>
+  </n-config-provider>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { theme } from './assets/theme'
+import SlackMR from './components/SlackMR.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SlackMR
+  },
+  data() {
+    return {
+      theme
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

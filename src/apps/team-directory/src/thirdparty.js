@@ -1,0 +1,36 @@
+import {
+  create,
+  NIcon,
+  NButton,
+  NSpace,
+  NGi,
+  NGrid,
+  NThing,
+  NCard,
+  NInput,
+  NInputNumber,
+  NAvatar,
+  NInputGroup,
+  NConfigProvider,
+  NSelect,
+  NAlert,
+} from "naive-ui";
+
+export const naive = create({
+  components: [
+    NIcon,
+    NButton,
+    NSpace,
+    NCard,
+    NGi,
+    NGrid,
+    NThing,
+    NAvatar,
+    NInput,
+    NInputNumber,
+    NInputGroup,
+    NConfigProvider,
+    NSelect,
+    NAlert,
+  ],
+});

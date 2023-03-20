@@ -1,7 +1,9 @@
 import { h, createApp } from "vue";
 import singleSpaVue from "single-spa-vue";
 
+import { naive } from "./thirdparty.js";
 import App from "./App.vue";
+import "./assets/style.css";
 
 const vueLifecycles = singleSpaVue({
   createApp,
@@ -18,6 +20,9 @@ const vueLifecycles = singleSpaVue({
         */
       });
     },
+  },
+  handleInstance: (app) => {
+    app.use(naive);
   },
 });
 
