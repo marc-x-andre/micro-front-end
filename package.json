@@ -39,13 +39,13 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@marcXandre/team-directory": "file:src/apps/team-directory",
+    "@marcXandre/slack-msg": "file:src/slack-msg",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "single-spa": "^5.9.3",
     "single-spa-layout": "^1.6.0"
   },
   "subPackages": [
-    "src/apps/team-directory"
+    "src/slack-msg"
   ]
 }

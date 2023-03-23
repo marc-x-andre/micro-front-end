@@ -1,4 +1,4 @@
-# team-directory
+# slack-msg
 
 ## Project setup
 ```
