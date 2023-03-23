@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Root Config</title>
-
+  <title>@marcXandre - Micro Front End</title>
+  <meta name="description" content="POC of a micro-front-end architecture with Svelte, Vue, React">
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -36,6 +36,8 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "@marcXandre/root-config": "https://micro-front-end.pages.dev/marcXandre-root-config.js",
+        "@marcXandre/styleguide": "https://micro-front-end.pages.dev/styleguide/js/app.js",
+        "@marcXandre/navigator": "https://micro-front-end.pages.dev/navigator/js/app.js"
         "@marcXandre/slack-msg": "https://micro-front-end.pages.dev/slack-msg/js/app.js"
       }
     }
@@ -51,7 +53,9 @@
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@marcXandre/root-config": "//localhost:9000/marcXandre-root-config.js",
-        "@marcXandre/slack-msg": "http://localhost:8080/js/app.js"
+        "@marcXandre/styleguide": "http://localhost:8080/js/app.js",
+        "@marcXandre/navigator": "http://localhost:8080/js/app.js",
+        "@marcXandre/slack-msg": "http://localhost:8080/js/app.js",
       }
     }
   </script>
@@ -79,6 +83,9 @@
   </noscript>
   <script>
     System.import('@marcXandre/root-config');
+    System.import('@marcXandre/styleguide');
+    System.import('@marcXandre/navigator');
+    System.import('@marcXandre/slack-msg');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
