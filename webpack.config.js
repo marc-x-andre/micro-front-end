@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = "marcXandre";
@@ -13,7 +14,12 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
+    devServer: {
+      static: {
+        // eslint-disable-next-line no-undef
+        directory: path.join(__dirname, "dist"),
+      },
+    },
     plugins: [
       new HtmlWebpackPlugin({
         inject: false,
