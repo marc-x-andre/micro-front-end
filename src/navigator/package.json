@@ -4,12 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "concurrently yarn:build:*",
-    "build:rollup": "rollup -c",
+    "build": "rollup -c",
+    "build:parent": "rollup -c --file ../../dist/navigator/marcXandre-navigator.js",
     "start": "rollup -c -w",
     "serve": "sirv dist -c",
     "test": "jest",
-    "prepare": "husky install",
     "format": "prettier --write --plugin-search-dir=. .",
     "check-format": "prettier --plugin-search-dir=. --check ."
   },
