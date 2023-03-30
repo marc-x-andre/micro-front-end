@@ -51,5 +51,8 @@
     "src/navigator",
     "src/styleguide",
     "src/slack-msg"
-  ]
+  ],
+  "prettier": {
+    "endOfLine": "auto"
+  }
 }

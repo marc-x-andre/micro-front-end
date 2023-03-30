@@ -18,10 +18,8 @@ export default {
     svelte({
       // enable run-time checks when not in production
       dev: !production,
-
       emitCss: false,
     }),
-
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
     // some cases you'll need additional configuration -
@@ -32,15 +30,12 @@ export default {
       dedupe: ["svelte"],
     }),
     commonjs(),
-
     // In dev mode, call `npm run start` once
     // the bundle has been generated
     !production && serve(),
-
     // Watch the `dist` directory and refresh the
     // browser on changes when not in production
     !production && livereload("dist"),
-
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),

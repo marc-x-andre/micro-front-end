@@ -8,4 +8,9 @@
   }
 </style>
 
-<section>{name} is mounted!</section>
+<button class="btn btn-primary">Button</button>
+
+<button class="btn btn-primary">Button 2</button>
+<button class="btn btn-primary">Button</button>
+
+<section class="text-lg font-medium">{name} is mounted!</section>
