@@ -14,6 +14,7 @@ import {
   NConfigProvider,
   NSelect,
   NAlert,
+  NDivider,
 } from "naive-ui";
 
 export const naive = create({
@@ -32,5 +33,6 @@ export const naive = create({
     NConfigProvider,
     NSelect,
     NAlert,
+    NDivider,
   ],
 });

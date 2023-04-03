@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #798777;
-    color: #F8EDE3;
+    background: var(--mxa-color);
+    color: var(--mxa-text-color);
 }
 .container {
     width: 90%;

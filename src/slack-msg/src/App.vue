@@ -2,7 +2,6 @@
   <n-config-provider :theme-overrides="theme">
   <div class="page">
     <div class="container">
-      <h1>Slack Message Maker</h1>
       <SlackMR />
     </div>
   </div>
@@ -11,7 +10,7 @@
 
 <script>
 import { theme } from './assets/theme'
-import SlackMR from './components/SlackMR.vue'
+import SlackMR from './blocks/SlackMR.vue'
 
 export default {
   name: 'App',

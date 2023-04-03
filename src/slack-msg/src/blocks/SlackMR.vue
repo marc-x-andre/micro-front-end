@@ -1,13 +1,6 @@
 <template>
   <n-card>
     <n-thing content-indented>
-      <template #avatar>
-        <n-avatar color="#c9dec9">
-          <n-icon color="#545d54">
-            <GitPullRequest />
-          </n-icon>
-        </n-avatar>
-      </template>
       <template #header>
         Asking for Pull Request
       </template>
@@ -28,10 +21,16 @@
           </n-button>
         </n-space>
       </template>
-      <!--  -->
 
+      <!-- Text -->
       <n-space vertical>
-        <n-space vertical>
+
+        <n-space vertical v-if="githubToken">
+          <n-input-group>
+            <n-input v-model:value="link" placeholder="Github url" />
+          </n-input-group>
+        </n-space>
+        <n-space vertical v-else>
           <n-input-group>
             <n-input v-model:value="boardId" type="text" placeholder="Board" />
             <n-input-number v-model:value="ticketId" placeholder="Ticket #" :style="{ width: '43%' }"
@@ -48,35 +47,46 @@
               {{ boardId || 'abc' }}
             </span>-<span style="text-transform: uppercase;">
               {{ ticketId || 'xxx' }}
-            </span> → {{ destination || "branch" }}: 
+            </span> → {{ destination || "branch" }}:
             <span style="text-decoration: underline; color: #798777;">
               {{ link || '' }}
             </span>
           </span>
         </n-alert>
-
       </n-space>
+
+      <!-- Text -->
       <template #action>
         <n-space>
           <n-button size="small" @click="() => copyToClipboard()">
             <template #icon>
               <n-icon>
-                <Clipboard v-if="!copied"/>
-                <Sparkles v-else/>
+                <Clipboard v-if="!copied" />
+                <Sparkles v-else />
               </n-icon>
             </template>
             Copy to clipboard
           </n-button>
+          <n-button size="small" @click="$refs.githubTokenModal.show()">
+            <template #icon>
+              <n-icon>
+                <Code />
+              </n-icon>
+            </template>
+            Set Github Token
+          </n-button>
         </n-space>
       </template>
     </n-thing>
+    <GithubTokenModal ref="githubTokenModal" />
   </n-card>
 </template>
 
 
 <script setup>
 import { ref } from "vue"
-import { GitPullRequest, Clipboard, Shuffle, Close, Sparkles } from '@vicons/ionicons5'
+import { GithubTokenModal } from "../components/GithubTokenModal.vue"
+import { Clipboard, Shuffle, Close, Sparkles, Code } from '@vicons/ionicons5'
 
 
 const destinationOptions = [
@@ -93,6 +103,8 @@ const ticketId = ref(null)
 const destination = ref(null)
 const link = ref("")
 const copied = ref(false)
+const githubToken = ref(true)
+
 
 const changeEmoji = (newValue) => {
   if (newValue === null) {
