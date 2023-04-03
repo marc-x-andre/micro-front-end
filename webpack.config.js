@@ -31,7 +31,7 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
       new CopyPlugin({
-        patterns: [{ from: "public", to: "dist" }],
+        patterns: [{ from: "public", to: "." }],
       }),
     ],
   });
