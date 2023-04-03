@@ -67,7 +67,7 @@
             </template>
             Copy to clipboard
           </n-button>
-          <n-button size="small" @click="$refs.githubTokenModal.show()">
+          <n-button size="small" @click="() => githubStore.openModal()">
             <template #icon>
               <n-icon>
                 <Code />
@@ -78,15 +78,15 @@
         </n-space>
       </template>
     </n-thing>
-    <GithubTokenModal ref="githubTokenModal" />
   </n-card>
 </template>
 
 
 <script setup>
 import { ref } from "vue"
-import { GithubTokenModal } from "../components/GithubTokenModal.vue"
 import { Clipboard, Shuffle, Close, Sparkles, Code } from '@vicons/ionicons5'
+import { useGithubStore } from "@/stores/GithubStore";
+const githubStore = useGithubStore();
 
 
 const destinationOptions = [
@@ -105,6 +105,8 @@ const link = ref("")
 const copied = ref(false)
 const githubToken = ref(true)
 
+
+// On change 
 
 const changeEmoji = (newValue) => {
   if (newValue === null) {

@@ -1,29 +1,39 @@
 <template>
-    <n-button @click="showModal = true">
-        Start Me up
-    </n-button>
-    <n-modal v-model:show="showModal">
-        <n-card style="width: 600px" title="Modal" :bordered="false" size="huge" role="dialog" aria-modal="true">
-            <template #header-extra>
-                Oops!
-            </template>
-            Content
-            <template #footer>
-                Footer
-            </template>
-        </n-card>
-    </n-modal>
+  <n-modal v-model:show="githubStore.showModal">
+    <n-card style="width: 600px" title="Github Access Token" :bordered="false" size="huge" role="dialog"
+      aria-modal="true">
+      <template #header-extra>
+        Token will be in local storage only
+      </template>
+      <n-space vertical>
+        <n-input-group>
+          <n-input v-model:value="token" placeholder="Github Token" />
+        </n-input-group>
+      </n-space>
+      <template #footer>
+        <n-button size="small" @click="() => save()">
+          <template #icon>
+            <n-icon>
+              <Save />
+            </n-icon>
+          </template>
+          Confirm
+        </n-button>
+      </template>
+    </n-card>
+  </n-modal>
 </template>
-  
 
 <script setup>
-import { ref } from "vue"
+import { useGithubStore } from "@/stores/GithubStore";
+import { Save } from '@vicons/ionicons5'
+import { ref } from "vue";
+const githubStore = useGithubStore();
+const token = ref(githubStore.token)
 
-const showModal = ref(false)
-
-// eslint-disable-next-line no-unused-vars
-export function show() {
-    showModal.value = true
+const save = () => {
+  githubStore.setToken(token.value)
+  githubStore.showModal = false
 }
 
 </script>

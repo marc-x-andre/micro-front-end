@@ -1,5 +1,6 @@
 import { h, createApp } from "vue";
 import singleSpaVue from "single-spa-vue";
+import { createPinia } from "pinia";
 
 import { naive } from "./thirdparty.js";
 import App from "./App.vue";
@@ -22,6 +23,7 @@ const vueLifecycles = singleSpaVue({
     },
   },
   handleInstance: (app) => {
+    app.use(createPinia());
     app.use(naive);
   },
 });
