@@ -15,6 +15,7 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
+    entry: "./packages/root/marcXandre-root-config.js",
     devServer: {
       static: {
         // eslint-disable-next-line no-undef
@@ -24,7 +25,7 @@ module.exports = (webpackConfigEnv, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         inject: false,
-        template: "src/index.ejs",
+        template: "packages/root/index.ejs",
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName,
