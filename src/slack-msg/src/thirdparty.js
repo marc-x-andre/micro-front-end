@@ -16,6 +16,7 @@ import {
   NAlert,
   NDivider,
   NModal,
+  NTag,
 } from "naive-ui";
 
 export const naive = create({
@@ -36,5 +37,6 @@ export const naive = create({
     NAlert,
     NDivider,
     NModal,
+    NTag,
   ],
 });

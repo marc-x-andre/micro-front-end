@@ -25,9 +25,10 @@
       <!-- Text -->
       <n-space vertical>
 
-        <n-space vertical v-if="githubToken">
+        <n-space vertical v-if="githubStore.token && githubStore.username">
           <n-input-group>
-            <n-input v-model:value="link" placeholder="Github url" />
+            <n-input v-model:value="githubLink" :status="githubStore.error ? 'error' : ''" :loading="githubStore.loading"
+              placeholder="Github url" />
           </n-input-group>
         </n-space>
         <n-space vertical v-else>
@@ -40,7 +41,25 @@
           <n-input v-model:value="link" placeholder="Hosted Link" />
         </n-space>
 
-        <n-alert :show-icon="false" style="padding: 1em;">
+        <n-alert v-if="githubStore.prInfo" :show-icon="false" style="padding: 1em;">
+          <span id="slackPRMsg">
+            {{ emoji }} PR for
+            <a v-if="jiraStore.url" :href="jiraStore.url + githubStore.prInfo.ticket" style="text-decoration: underline; color: #798777; text-transform: uppercase;">
+              {{ githubStore.prInfo.ticket }}
+            </a>
+            <span v-else style="text-transform: uppercase;">
+              {{ githubStore.prInfo.ticket }}
+            </span>
+
+            → <span style="text-transform: uppercase;">{{ githubStore.prInfo.branch }}</span>:
+            <a :href="githubStore.prInfo.url" style="text-decoration: underline; color: #798777;">
+              {{ githubStore.prInfo.url }}
+            </a>
+          </span>
+        </n-alert>
+
+
+        <n-alert v-else :show-icon="false" style="padding: 1em;">
           <span id="slackPRMsg">
             {{ emoji }} PR for
             <span style="text-transform: uppercase;">
@@ -75,6 +94,19 @@
             </template>
             Set Github Token
           </n-button>
+          <n-divider vertical />
+          <n-tag v-if="githubStore.username" type="success" round>
+            {{ githubStore.username }}
+            <template #icon>
+              <n-icon :component="LogoGithub" />
+            </template>
+          </n-tag>
+          <n-tag v-else-if="githubStore.error" type="error" round>
+            token invalid
+            <template #icon>
+              <n-icon :component="LogoGithub" />
+            </template>
+          </n-tag>
         </n-space>
       </template>
     </n-thing>
@@ -83,10 +115,13 @@
 
 
 <script setup>
-import { ref } from "vue"
-import { Clipboard, Shuffle, Close, Sparkles, Code } from '@vicons/ionicons5'
+import { ref, computed } from "vue"
+import { Clipboard, Shuffle, Close, Sparkles, Code, LogoGithub } from '@vicons/ionicons5'
 import { useGithubStore } from "@/stores/GithubStore";
+import { useJiraStore } from "@/stores/JiraStore";
+
 const githubStore = useGithubStore();
+const jiraStore = useJiraStore();
 
 
 const destinationOptions = [
@@ -103,7 +138,14 @@ const ticketId = ref(null)
 const destination = ref(null)
 const link = ref("")
 const copied = ref(false)
-const githubToken = ref(true)
+
+const githubLink = computed({
+  get: (v) => v,
+  set: (link) => {
+    githubStore.setPRInfo(link)
+  }
+})
+
 
 
 // On change 
