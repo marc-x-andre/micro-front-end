@@ -2,6 +2,8 @@
   import Button from "./Button.svelte";
 </script>
 
+<div class="mxa-navbar-spacer"/>
+
 <div class="mxa-navbar">
   <div class="mxa-inner-navbar">
     <a class="icon" href="https://marcxandre.dev/">
@@ -26,13 +28,17 @@
 </div>
 
 <style lang="scss">
+  .mxa-navbar-spacer {
+    height: 70px;
+    width: 100%;
+  }
   .mxa-navbar {
     z-index: 1000;
     width: 100vw;
     position: fixed;
+    top: 0;
   }
   .mxa-inner-navbar {
-    background-color: #eeeff1;
     padding: 1rem 2rem;
     font-size: 1rem;
     display: flex;
@@ -43,6 +49,7 @@
     font-family: Caveat, v-sans, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       Segoe UI Symbol;
+    font-size: 1.5rem;
     display: flex;
     align-items: flex-end;
     color: #2f2f32;

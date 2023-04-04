@@ -1,65 +1,27 @@
-<script>
-  import Button from "./Button.svelte";
-</script>
-
-<div class="mxa-navbar">
-  <div class="mxa-inner-navbar">
-    <a class="icon" href="https://marcxandre.dev/">
-      <img
-        width="28"
-        height="28"
-        src="/icons/apple-touch-icon-180x180.png"
-        class=""
-        alt="Marc Logo"
-      />
-      @marcXandre
-    </a>
-    <div
-      class="mxa-button-group"
-      style="display: flex; flex-flow: row wrap; justify-content: flex-start; gap: 8px 12px;"
-    >
-      <Button text="Website" href="https://marcxandre.dev/" />
-      <Button text="Linkedin" href="https://linkedin.com/in/marc-x-andre/" />
-      <Button text="Resume" href="https://cv.marcxandre.dev/" />
+<div class="mxa-container">
+  <div class="mxa-inner-container">
+    <div class="content">
+      <h1>Hello Micro Front End</h1>
+      <p>This website use multiple web framework to accompliosh a seamless web experience:</p>
+      <ul>
+        <li>
+          <a target="_blank" href="https://single-spa.js.org/" referrerpolicy="origin">Single SPA</a> 
+          - Register and control the rendering of micro front end.
+        </li>
+        <li>
+          <a target="_blank" href="https://sass-lang.com/" referrerpolicy="origin">SASS</a> 
+          - Fot the package that containt the styleguide.
+        </li>
+        <li>
+          <a target="_blank" href="https://svelte.dev/" referrerpolicy="origin">Svelte</a> 
+          - At build time framework for the navbar and the introduction.
+        </li>
+        <li>
+          <a target="_blank" href="https://vuejs.org/" referrerpolicy="origin">Vue3</a> 
+          - For the application below.
+        </li>
+      </ul>
+      <p>The code is publicly available on <a href="https://github.com/marc-x-andre/micro-front-end">Github</a></p>
     </div>
   </div>
 </div>
-
-<style lang="scss">
-  .mxa-navbar {
-    z-index: 1000;
-    width: 100vw;
-    position: fixed;
-  }
-  .mxa-inner-navbar {
-    background-color: #eeeff1;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .icon {
-    font-family: Caveat, v-sans, system-ui, -apple-system, BlinkMacSystemFont,
-      Segoe UI, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      Segoe UI Symbol;
-    display: flex;
-    align-items: flex-end;
-    color: #2f2f32;
-    text-decoration: none;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .icon:hover {
-    color: #a855f7;
-  }
-  .icon img {
-    margin-right: 1rem;
-  }
-  .mxa-button-group {
-    display: flex;
-    margin-left: auto;
-  }
-</style>

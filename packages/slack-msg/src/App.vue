@@ -1,7 +1,7 @@
 <template>
   <n-config-provider :theme-overrides="theme">
-    <div class="page">
-      <div class="mxa-container">
+    <div class="mxa-container">
+      <div class="mxa-inner-container">
         <SlackMR />
       </div>
     </div>
