@@ -10,7 +10,7 @@
           <n-input v-model:value="token" placeholder="Github Token" />
         </n-input-group>
         <n-input-group>
-          <n-input v-model:value="jiraUrl" placeholder="https://organization.atlassian.net/browse" />
+          <n-input v-model:value="jiraUrl" placeholder="Jira Url" />
         </n-input-group>
       </n-space>
       <template #footer>

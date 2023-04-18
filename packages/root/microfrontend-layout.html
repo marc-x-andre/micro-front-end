@@ -1,10 +1,15 @@
 <single-spa-router>
   <main>
     <application name="@marcXandre/styleguide"></application>
-    <application name="@marcXandre/navigator"></application>
-    <application name="@marcXandre/documentation"></application>
-    <route default>
-      <application name="@marcXandre/slack-msg"></application>
-    </route>
+    <!-- Warning: Layout with move next app inside -->
+    <application name="@marcXandre/layout"></application>
+    <div id="hey-layout-move-me-in-you-please">
+      <route default>
+        <application name="@marcXandre/documentation" label="content"></application>
+      </route>
+      <route path="slack">
+        <application name="@marcXandre/slack-msg" label="content"></application>
+      </route>
+    </div>
   </main>
 </single-spa-router>

@@ -44,12 +44,16 @@
         <n-alert v-if="githubStore.prInfo" :show-icon="false" style="padding: 1em;">
           <span id="slackPRMsg">
             {{ emoji }} PR for
-            <a v-if="jiraStore.url" :href="jiraStore.url + githubStore.prInfo.ticket" style="text-decoration: underline; color: #798777; text-transform: uppercase;">
+            <a v-if="jiraStore.url" :href="jiraStore.url + '/browse' + githubStore.prInfo.ticket"
+              style="text-decoration: underline; color: #798777; text-transform: uppercase;">
               {{ githubStore.prInfo.ticket }}
             </a>
-            <span v-else style="text-transform: uppercase;">
+            <span v-if="githubStore.prInfo.ticket" style="text-transform: uppercase;">
               {{ githubStore.prInfo.ticket }}
             </span>
+            <i v-else>
+              {{ githubStore.prInfo.title }}
+            </i>
 
             → <span style="text-transform: uppercase;">{{ githubStore.prInfo.branch }}</span>:
             <a :href="githubStore.prInfo.url" style="text-decoration: underline; color: #798777;">
@@ -130,7 +134,7 @@ const destinationOptions = [
   { label: "master", value: "master" },
 ]
 
-const emojiOptions = ["🚧", "✨", "💪", "💥", "🎯", "🥊", "📈", "🌱"]
+const emojiOptions = ["🐛", "🏗️", "💪", "💥", "🎯", "🥊", "🌱"]
 
 const emoji = ref(null)
 const boardId = ref("")
@@ -145,10 +149,6 @@ const githubLink = computed({
     githubStore.setPRInfo(link)
   }
 })
-
-
-
-// On change 
 
 const changeEmoji = (newValue) => {
   if (newValue === null) {

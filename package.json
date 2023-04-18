@@ -38,7 +38,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@marcXandre/navigator": "file:packages/navigator",
+    "@marcXandre/layout": "file:packages/layout",
     "@marcXandre/documentation": "file:packages/documentation",
     "@marcXandre/slack-msg": "file:packages/slack-msg",
     "@marcXandre/styleguide": "file:packages/styleguide",
@@ -51,7 +51,7 @@
     "single-spa-layout": "^1.6.0"
   },
   "subPackages": [
-    "packages/navigator",
+    "packages/layout",
     "packages/documentation",
     "packages/styleguide",
     "packages/slack-msg"

@@ -63,12 +63,18 @@ export const useGithubStore = defineStore("githubStore", {
             ...requestParams,
           })
           .then((response) => {
-            console.log(response.data);
             this.prInfo = {
               ticket: response.data.head.ref.split("/")[1],
               branch: response.data.base.ref,
+              title: response.data.title,
               url,
             };
+            console.log({
+              ticket: response.data.head.ref.split("/")[1],
+              branch: response.data.base.ref,
+              title: response.data.title,
+              url,
+            });
           })
           .catch(() => {
             this.error = true;

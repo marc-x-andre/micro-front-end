@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +56,8 @@
     This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
     Learn more about CSP policies at https://content-security-policy.com/#directive
   -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:* http://localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:* http://localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
 
   <script type="systemjs-importmap">
@@ -64,7 +66,7 @@
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "@marcXandre/root-config": "https://micro-front-end.pages.dev/marcXandre-root-config.js",
         "@marcXandre/styleguide": "https://micro-front-end.pages.dev/styleguide/marcXandre-styleguide.js",
-        "@marcXandre/navigator": "https://micro-front-end.pages.dev/navigator/marcXandre-navigator.js",
+        "@marcXandre/layout": "https://micro-front-end.pages.dev/layout/js/app.js",
         "@marcXandre/documentation": "https://micro-front-end.pages.dev/documentation/marcXandre-documentation.js",
         "@marcXandre/slack-msg": "https://micro-front-end.pages.dev/slack-msg/js/app.js"
       }
@@ -72,27 +74,27 @@
   </script>
 
   <% if (isLocal) { %>
-  <script type="systemjs-importmap">
+    <script type="systemjs-importmap">
     {
       "imports": {
-        "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@marcXandre/root-config": "//localhost:9000/marcXandre-root-config.js",
         "@marcXandre/styleguide": "//localhost:9000/styleguide/marcXandre-styleguide.js",
-        "@marcXandre/navigator": "//localhost:9000/navigator/marcXandre-navigator.js",
+        "@marcXandre/layout": "//localhost:9000/layout/js/app.js",
         "@marcXandre/documentation": "//localhost:9000/documentation/marcXandre-documentation.js",
         "@marcXandre/slack-msg": "//localhost:9000/slack-msg/js/app.js"
       }
     }
   </script>
-  <% } %>
+    <% } %>
 
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+      <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
 </head>
+
 <body>
   <noscript>
     You need to enable JavaScript to run this app.
@@ -101,9 +103,10 @@
     System.import('@marcXandre/root-config');
     System.import('@marcXandre/styleguide');
     System.import('@marcXandre/documentation');
-    System.import('@marcXandre/navigator');
+    System.import('@marcXandre/layout');
     System.import('@marcXandre/slack-msg');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
+
 </html>
