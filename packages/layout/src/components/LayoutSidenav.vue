@@ -11,6 +11,7 @@ import { NIcon } from "naive-ui";
 import {
   BookOutline as BookIcon,
   LogoSlack as SlackIcon,
+  TrailSign as Base64Icon,
 } from '@vicons/ionicons5';
 import { computed } from '@vue/reactivity';
 
@@ -53,7 +54,8 @@ const menuOptions = [
     label: 'Helpers',
     key: 'helpers',
     children: [
-      renderLink('/slack', 'Slack Message', SlackIcon)
+      renderLink('/slack', 'Slack Message', SlackIcon),
+      renderLink('/base64', 'Base64', Base64Icon),
     ]
   }
 ]

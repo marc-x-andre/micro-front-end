@@ -41,47 +41,14 @@
           <n-input v-model:value="link" placeholder="Hosted Link" />
         </n-space>
 
-        <n-alert v-if="githubStore.prInfo" :show-icon="false" style="padding: 1em;">
-          <span id="slackPRMsg">
-            {{ emoji }} PR for
-            <a v-if="jiraStore.url" :href="jiraStore.url + '/browse' + githubStore.prInfo.ticket"
-              style="text-decoration: underline; color: #798777; text-transform: uppercase;">
-              {{ githubStore.prInfo.ticket }}
-            </a>
-            <span v-if="githubStore.prInfo.ticket" style="text-transform: uppercase;">
-              {{ githubStore.prInfo.ticket }}
-            </span>
-            <i v-else>
-              {{ githubStore.prInfo.title }}
-            </i>
-
-            → <span style="text-transform: uppercase;">{{ githubStore.prInfo.branch }}</span>:
-            <a :href="githubStore.prInfo.url" style="text-decoration: underline; color: #798777;">
-              {{ githubStore.prInfo.url }}
-            </a>
-          </span>
-        </n-alert>
-
-
-        <n-alert v-else :show-icon="false" style="padding: 1em;">
-          <span id="slackPRMsg">
-            {{ emoji }} PR for
-            <span style="text-transform: uppercase;">
-              {{ boardId || 'abc' }}
-            </span>-<span style="text-transform: uppercase;">
-              {{ ticketId || 'xxx' }}
-            </span> → {{ destination || "branch" }}:
-            <span style="text-decoration: underline; color: #798777;">
-              {{ link || '' }}
-            </span>
-          </span>
-        </n-alert>
+        <MessageBox v-if="githubStore.prInfo" :emoji="emoji" :link="link" />
+        <MessageBox v-else :emoji="emoji" :boardId="boardId" :ticketId="ticketId" :link="link" :destination="destination" />
       </n-space>
 
       <!-- Text -->
       <template #action>
         <n-space>
-          <n-button size="small" @click="() => copyToClipboard()">
+          <n-button v-if="false" size="small" @click="() => copyToClipboard()">
             <template #icon>
               <n-icon>
                 <Clipboard v-if="!copied" />
@@ -96,9 +63,10 @@
                 <Code />
               </n-icon>
             </template>
-            Set Github Token
+            Config
           </n-button>
-          <n-divider vertical />
+          <n-divider  />
+          <n-divider  />
           <n-tag v-if="githubStore.username" type="success" round>
             {{ githubStore.username }}
             <template #icon>
@@ -122,10 +90,9 @@
 import { ref, computed } from "vue"
 import { Clipboard, Shuffle, Close, Sparkles, Code, LogoGithub } from '@vicons/ionicons5'
 import { useGithubStore } from "@/stores/GithubStore";
-import { useJiraStore } from "@/stores/JiraStore";
+import MessageBox from "@/components/MessageBox";
 
 const githubStore = useGithubStore();
-const jiraStore = useJiraStore();
 
 
 const destinationOptions = [
@@ -160,9 +127,9 @@ const changeEmoji = (newValue) => {
   }
 }
 
-const copyToClipboard = () => {
+const copyToClipboard = async () => {
   const copyText = document.getElementById("slackPRMsg").textContent;
-  navigator.clipboard.writeText(copyText);
+  await navigator.clipboard.writeText(copyText);
   copied.value = true;
   setTimeout(() => {
     copied.value = false;

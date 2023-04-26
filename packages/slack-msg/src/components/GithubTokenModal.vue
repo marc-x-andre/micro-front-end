@@ -1,9 +1,9 @@
 <template>
   <n-modal v-model:show="githubStore.showModal">
-    <n-card style="width: 600px" title="Github Access Token" :bordered="false" size="huge" role="dialog"
+    <n-card style="width: 600px" title="Config" :bordered="false" size="huge" role="dialog"
       aria-modal="true">
       <template #header-extra>
-        Token will only be in local storage
+        Config will only be in local storage
       </template>
       <n-space vertical>
         <n-input-group>
