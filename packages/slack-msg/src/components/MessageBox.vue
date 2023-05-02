@@ -52,8 +52,8 @@ const code = () => {
   const url = `${prInfo.value?.url || props.link}`
   let hostname;
   try {
-    hostname = new URL(url).hostname;
-  } catch { 
+    hostname = `View on${new URL(url).hostname.split('.')[0]}`;
+  } catch {
     hostname = url
   }
   return h(
