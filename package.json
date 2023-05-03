@@ -54,7 +54,8 @@
     "packages/layout",
     "packages/documentation",
     "packages/styleguide",
-    "packages/slack-msg"
+    "packages/slack-msg",
+    "packages/base64"
   ],
   "prettier": {
     "endOfLine": "auto"

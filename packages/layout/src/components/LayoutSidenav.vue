@@ -1,7 +1,7 @@
 <template>
   <n-layout-sider bordered show-trigger :collapsed="isCollapse" @collapse="collapse = true" @expand="collapse = false"
     collapse-mode="width" :collapsed-width="64" :width="272" :native-scrollbar="false">
-    <n-menu :collapsed-width="64" :collapsed-icon-size="22" :options="menuOptions" v-model:value="selectedKey"/>
+    <n-menu :collapsed-width="64" :collapsed-icon-size="22" :options="menuOptions" v-model:value="selectedKey" />
   </n-layout-sider>
 </template>
   
@@ -12,6 +12,7 @@ import {
   BookOutline as BookIcon,
   LogoSlack as SlackIcon,
   TrailSign as Base64Icon,
+  Cog as CogIcon,
 } from '@vicons/ionicons5';
 import { computed } from '@vue/reactivity';
 
@@ -43,16 +44,17 @@ function renderLink(href, label, icon) {
 const menuOptions = [
   {
     type: 'group',
-    label: 'Information',
+    label: 'Hello!',
     key: 'information',
     children: [
-      renderLink('/', 'Welcome', BookIcon)
+      renderLink('/', 'Welcome', BookIcon),
+      renderLink('/config', 'Config', CogIcon),
     ]
   },
   {
     type: 'group',
-    label: 'Helpers',
-    key: 'helpers',
+    label: 'Tools',
+    key: 'tools',
     children: [
       renderLink('/slack', 'Slack Message', SlackIcon),
       renderLink('/base64', 'Base64', Base64Icon),

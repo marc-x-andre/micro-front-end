@@ -1,12 +1,12 @@
 {
-  "name": "@marcXandre/layout",
+  "name": "@marcXandre/base64",
   "license": "BSD-3-Clause",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:parent": "vue-cli-service build --dest ../../dist/layout",
+    "build:parent": "vue-cli-service build --dest ../../dist/base64",
     "lint": "vue-cli-service lint",
     "serve:standalone": "vue-cli-service serve --mode standalone"
   },
@@ -15,7 +15,6 @@
     "@vicons/ionicons5": "^0.12.0",
     "core-js": "^3.8.3",
     "pinia": "^2.0.33",
-    "sass-loader": "^13.2.2",
     "single-spa-vue": "^2.1.0",
     "vue": "^3.2.13"
   },
