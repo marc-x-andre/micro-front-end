@@ -6,14 +6,11 @@
       @marcXandre
     </a>
     <n-space style="align-items: center; justify-content: flex-end;">
-      <n-button ghost tag="a" href="https://blog.marcxandre.dev/" target="_blank" referrerpolicy="origin">
-        Blog
+      <n-button ghost tag="a" href="https://marcxandre.dev/" target="_blank" referrerpolicy="origin">
+        Portfolio
       </n-button>
       <n-button ghost tag="a" href="https://www.linkedin.com/in/marc-x-andre/" target="_blank" referrerpolicy="origin">
         Linkedin
-      </n-button>
-      <n-button ghost tag="a" href="https://cv.marcxandre.dev/" target="_blank" referrerpolicy="origin">
-        Resume
       </n-button>
     </n-space>
   </n-layout-header>
