@@ -1,9 +1,9 @@
 <template>
   <n-layout-header bordered class="nav">
-    <a class="nav-logo" href="https://marcxandre.dev/">
+    <a class="nav-logo" href="https://mfe.marcxandre.dev/">
       <img width="28" height="28" src="https://mfe.marcxandre.dev/icons/apple-touch-icon-180x180.png" class=""
         alt="Marc Logo" />
-      @marcXandre
+      Micro Front End
     </a>
     <n-space style="align-items: center; justify-content: flex-end;">
       <n-button ghost tag="a" href="https://marcxandre.dev/" target="_blank" referrerpolicy="origin">
@@ -11,6 +11,9 @@
       </n-button>
       <n-button ghost tag="a" href="https://www.linkedin.com/in/marc-x-andre/" target="_blank" referrerpolicy="origin">
         Linkedin
+      </n-button>
+      <n-button ghost tag="a" href="https://cv.marcxandre.dev/" target="_blank" referrerpolicy="origin">
+        Resume
       </n-button>
     </n-space>
   </n-layout-header>
