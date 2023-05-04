@@ -13,6 +13,7 @@ import {
   LogoSlack as SlackIcon,
   TrailSign as Base64Icon,
   Cog as CogIcon,
+  Newspaper as NewspaperIcon
 } from '@vicons/ionicons5';
 import { computed } from '@vue/reactivity';
 
@@ -58,6 +59,7 @@ const menuOptions = [
     children: [
       renderLink('/slack', 'Slack Message', SlackIcon),
       renderLink('/base', 'Base 64', Base64Icon),
+      renderLink('/agile', 'Agile', NewspaperIcon),
     ]
   }
 ]
