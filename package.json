@@ -32,14 +32,15 @@
     "serve": "^12.0.0",
     "subpackage": "^1.1.0",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.8.0",
+    "webpack-cli": "^5.0.2",
     "webpack-config-single-spa": "^5.0.0",
     "webpack-dev-server": "^4.0.0",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@marcXandre/layout": "file:packages/layout",
+    "@marcXandre/base64": "file:packages/base64",
     "@marcXandre/documentation": "file:packages/documentation",
+    "@marcXandre/layout": "file:packages/layout",
     "@marcXandre/slack-msg": "file:packages/slack-msg",
     "@marcXandre/styleguide": "file:packages/styleguide",
     "@types/jest": "^27.0.1",

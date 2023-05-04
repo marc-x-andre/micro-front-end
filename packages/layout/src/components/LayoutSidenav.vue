@@ -57,7 +57,7 @@ const menuOptions = [
     key: 'tools',
     children: [
       renderLink('/slack', 'Slack Message', SlackIcon),
-      renderLink('/base64', 'Base64', Base64Icon),
+      renderLink('/base', 'Base 64', Base64Icon),
     ]
   }
 ]
