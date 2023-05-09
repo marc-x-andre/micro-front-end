@@ -4,6 +4,7 @@ import { createPinia } from "pinia";
 
 import { naive } from "./thirdparty.js";
 import App from "./App.vue";
+import "./assets/index.sass";
 
 const vueLifecycles = singleSpaVue({
   createApp,

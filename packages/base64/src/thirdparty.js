@@ -8,6 +8,7 @@ import {
   NFormItemGi,
   NForm,
   NSwitch,
+  NText,
 } from "naive-ui";
 
 export const naive = create({
@@ -20,5 +21,6 @@ export const naive = create({
     NFormItemGi,
     NForm,
     NSwitch,
+    NText,
   ],
 });
