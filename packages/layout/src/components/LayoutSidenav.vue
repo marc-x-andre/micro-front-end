@@ -12,9 +12,9 @@ import {
   BookOutline as BookIcon,
   LogoSlack as SlackIcon,
   TrailSign as Base64Icon,
-  Cog as CogIcon,
-  Newspaper as NewspaperIcon,
-  Flask as FlaskIcon,
+  // Cog as CogIcon,
+  // Newspaper as NewspaperIcon,
+  // Flask as FlaskIcon,
 } from '@vicons/ionicons5';
 import { computed } from '@vue/reactivity';
 
