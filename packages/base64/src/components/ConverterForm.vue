@@ -92,6 +92,7 @@ const rules = {
 </script>
 
 <style lang="sass">
-.n-input .n-input__input, .n-input .n-input__textarea
-  height: var(--input-height)
+.converter-form
+  .n-input .n-input__input, .n-input .n-input__textarea
+    height: var(--input-height)
 </style>
