@@ -50,7 +50,7 @@ const menuOptions = [
     key: 'information',
     children: [
       renderLink('/', 'Welcome', BookIcon),
-      renderLink('/config', 'Config', CogIcon),
+      // renderLink('/config', 'Config', CogIcon),
     ]
   },
   {
@@ -60,8 +60,8 @@ const menuOptions = [
     children: [
       renderLink('/slack', 'Slack Message', SlackIcon),
       renderLink('/base', 'Base 64', Base64Icon),
-      renderLink('/ilc', 'ILC Injector', FlaskIcon),
-      renderLink('/agile', 'Agile', NewspaperIcon),
+      // renderLink('/ilc', 'ILC Injector', FlaskIcon),
+      // renderLink('/agile', 'Agile', NewspaperIcon),
     ]
   }
 ]
