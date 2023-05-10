@@ -8,6 +8,7 @@
       :
       <component :is="code" />
     </span>
+    <component :is="title" />
   </n-alert>
 </template>
 
@@ -45,6 +46,13 @@ const parentBranch = () => {
   return h(
     'span',
     `${prInfo.value?.branch || props.destination || "branch"}`
+  )
+}
+
+const title = () => {
+  return h(
+    'blockquote',
+    `${prInfo.value?.title ? prInfo.value.title : ''}`
   )
 }
 

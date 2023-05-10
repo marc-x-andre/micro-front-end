@@ -42,7 +42,8 @@
         </n-space>
 
         <MessageBox v-if="githubStore.prInfo" :emoji="emoji" :link="link" />
-        <MessageBox v-else :emoji="emoji" :boardId="boardId" :ticketId="ticketId" :link="link" :destination="destination" />
+        <MessageBox v-else :emoji="emoji" :boardId="boardId" :ticketId="ticketId" :link="link"
+          :destination="destination" />
       </n-space>
 
       <!-- Text -->
@@ -65,8 +66,8 @@
             </template>
             Config
           </n-button>
-          <n-divider  />
-          <n-divider  />
+          <n-divider />
+          <n-divider />
           <n-tag v-if="githubStore.username" type="success" round>
             {{ githubStore.username }}
             <template #icon>
@@ -101,7 +102,7 @@ const destinationOptions = [
   { label: "master", value: "master" },
 ]
 
-const emojiOptions = ["🐛", "🏗️", "💪", "💥", "🎯", "🥊", "🌱"]
+const emojiOptions = ["🐛", "🏗️", "💪", "💥", "🌱", "📦", "🎨"]
 
 const emoji = ref(null)
 const boardId = ref("")
