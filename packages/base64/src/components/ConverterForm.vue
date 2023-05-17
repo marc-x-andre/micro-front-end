@@ -45,7 +45,11 @@ const textToBase64 = () => {
 const base64ToText = () => {
   try {
     const translated = atob(formValue.value.base64);
-    formValue.value.text = formValue.value.urlEncoded ? decodeURI(translated) : translated
+    if (formValue.value.json) {
+      formValue.value.text = JSON.stringify(JSON.parse(translated));
+    } else {
+      formValue.value.text = formValue.value.urlEncoded ? decodeURI(translated) : translated
+    }
     formValue.value.lastTouch = 'base64'
     return true
   } catch {
@@ -54,7 +58,6 @@ const base64ToText = () => {
 };
 
 const updateJson = (json) => {
-  console.log(JSON.stringify(JSON.parse(json)));
   formValue.value.text = JSON.stringify(JSON.parse(json));
   textToBase64()
 }
@@ -63,7 +66,7 @@ const formRef = ref(null);
 const formValue = ref({
   text: "",
   base64: "",
-  urlEncoded: true,
+  urlEncoded: false,
   json: true,
   trim: true,
   lastTouch: undefined
