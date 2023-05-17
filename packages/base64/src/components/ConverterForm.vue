@@ -15,7 +15,7 @@
       <n-gi span="0 800:3" />
       <!-- Row 2 -->
       <n-form-item-gi v-if="formValue.json" span="12 800:6" label="JSON" path="text">
-        <JsonEditor v-model:modelValue="formValue.text" />
+        <JsonEditor :modelValue="formValue.text" @update:modelValue="updateJson" />
       </n-form-item-gi>
       <n-form-item-gi v-else span="12 800:6" label="Text" path="text">
         <n-input v-model:value="formValue.text" type="textarea" placeholder="This text will be translate to base64" />
@@ -45,7 +45,6 @@ const textToBase64 = () => {
 const base64ToText = () => {
   try {
     const translated = atob(formValue.value.base64);
-
     formValue.value.text = formValue.value.urlEncoded ? decodeURI(translated) : translated
     formValue.value.lastTouch = 'base64'
     return true
@@ -53,6 +52,11 @@ const base64ToText = () => {
     return false
   }
 };
+
+const updateJson = (v) => {
+  formValue.value.text = v;
+  textToBase64()
+}
 
 const formRef = ref(null);
 const formValue = ref({
@@ -63,6 +67,7 @@ const formValue = ref({
   trim: true,
   lastTouch: undefined
 });
+
 const rules = {
   text: {
     trigger: ["input"],

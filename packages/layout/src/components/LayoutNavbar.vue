@@ -3,7 +3,7 @@
     <a class="nav-logo" href="https://mfe.marcxandre.dev/">
       <img width="28" height="28" src="https://mfe.marcxandre.dev/icons/apple-touch-icon-180x180.png" class=""
         alt="Marc Logo" />
-      Micro Front End
+      Nautilus
     </a>
     <n-space style="align-items: center; justify-content: flex-end;">
       <n-button ghost tag="a" href="https://marcxandre.dev/" target="_blank" referrerpolicy="origin">
