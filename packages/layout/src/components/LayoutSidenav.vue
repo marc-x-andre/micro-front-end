@@ -14,7 +14,7 @@ import {
   TrailSign as Base64Icon,
   // Cog as CogIcon,
   // Newspaper as NewspaperIcon,
-  // Flask as FlaskIcon,
+  Flask as FlaskIcon,
 } from '@vicons/ionicons5';
 import { computed } from '@vue/reactivity';
 
@@ -60,7 +60,7 @@ const menuOptions = [
     children: [
       renderLink('/slack', 'Slack Message', SlackIcon),
       renderLink('/base', 'Base 64', Base64Icon),
-      // renderLink('/ilc', 'ILC Injector', FlaskIcon),
+      renderLink('/ilc', 'ILC Injector', FlaskIcon),
       // renderLink('/agile', 'Agile', NewspaperIcon),
     ]
   }
