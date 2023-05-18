@@ -2,10 +2,10 @@ import { defineStore } from "pinia";
 
 export const useViewerStore = defineStore("viewerStore", {
   state: () => ({
-    url: "",
     json: { your: "json" },
-    iframeUrl: "",
-    param: "param",
+    url: localStorage.getItem("ilc-injector-url"),
+    iframeUrl: localStorage.getItem("ilc-injector-iframeUrl"),
+    param: localStorage.getItem("ilc-injector-param"),
   }),
   actions: {
     refreshIframe() {
@@ -17,6 +17,10 @@ export const useViewerStore = defineStore("viewerStore", {
       }
       this.iframeUrl = `${this.url}?${this.param}=${btoa(stringy)}`;
       document.getElementById("iframe-ilc").src = this.iframeUrl;
+
+      localStorage.setItem("ilc-injector-url", this.url);
+      localStorage.setItem("ilc-injector-iframeUrl", this.iframeUrl);
+      localStorage.setItem("ilc-injector-param", this.param);
     },
   },
 });
