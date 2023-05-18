@@ -14,6 +14,9 @@ import {
   NIcon,
   NInputGroup,
   NText,
+  NModal,
+  NCard,
+  NImage,
 } from "naive-ui";
 
 export const naive = create({
@@ -32,5 +35,8 @@ export const naive = create({
     NIcon,
     NText,
     NInputGroup,
+    NModal,
+    NCard,
+    NImage,
   ],
 });

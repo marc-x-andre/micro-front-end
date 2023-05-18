@@ -12,6 +12,7 @@
             </n-input-group>
           </n-gi>
           <n-gi span="6">
+            <InstructionModal />
             <n-text>
               Check for <n-text code>frameguard: false</n-text> in your helmet
             </n-text>
@@ -35,11 +36,8 @@
 import { theme } from './assets/theme'
 import JsonEditor from './components/JsonEditor.vue'
 import EmbedSite from './components/EmbedSite.vue'
+import InstructionModal from './components/InstructionModal.vue'
 import { useViewerStore } from './stores/ViewerStore'
 
 const store = useViewerStore();
-
-
-
-
 </script>
