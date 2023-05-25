@@ -13,9 +13,6 @@
           </n-gi>
           <n-gi span="6">
             <InstructionModal />
-            <n-text>
-              Check for <n-text code>frameguard: false</n-text> in your helmet
-            </n-text>
           </n-gi>
           <n-gi span="4">
             <JsonEditor v-model:modelValue="store.json" />

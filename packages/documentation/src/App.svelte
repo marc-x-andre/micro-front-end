@@ -1,10 +1,14 @@
 <div class="mxa-container">
   <div class="mxa-inner-container">
     <div class="content">
-      <h1>Hello Micro Front End</h1>
+      <h1>Nautilus - Explore the Abyss</h1>
       <p>
-        This website uses multiple web frameworks to accomplish a seamless web
-        experience:
+        A tool set design to improve development. Made with a micro-front-end
+        architecture with Svelte, Vue & React. A type of architecture where a
+        web application is divided into different modules, implemented
+        autonomously, allowing same level of flexibility and speed that
+        microservices provide. This website uses multiple web frameworks to
+        accomplish a seamless web experience:
       </p>
       <ul>
         <li>
@@ -37,9 +41,8 @@
         </li>
       </ul>
       <p>
-        The code is publicly available on <a
-          href="https://github.com/marc-x-andre/micro-front-end">Github</a
-        >
+        The code is publicly available on
+        <a href="https://github.com/marc-x-andre/micro-front-end">Github</a>
       </p>
     </div>
   </div>
