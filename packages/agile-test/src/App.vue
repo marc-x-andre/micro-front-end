@@ -2,8 +2,7 @@
   <n-config-provider :theme-overrides="theme">
     <div class="mxa-container">
       <div class="mxa-inner-container">
-        <n-divider>Base64 Converter</n-divider>
-        <ConverterForm />
+        <n-divider>Agile Assesment</n-divider>
       </div>
     </div>
   </n-config-provider>
@@ -11,6 +10,5 @@
 
 <script setup>
 import { theme } from './assets/theme'
-import ConverterForm from './components/ConverterForm.vue'
 
 </script>

@@ -43,7 +43,8 @@
     "@marcXandre/layout": "file:packages/layout",
     "@marcXandre/slack-msg": "file:packages/slack-msg",
     "@marcXandre/styleguide": "file:packages/styleguide",
-    "@marcXandre/ilc-injector": "file:packages/ilc-injector",
+    "@marcXandre/ilc-injector": "file:packalc-injector",
+    "@marcXandre/agile-test": "file:ges/ipackages/agile-test",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "copy-webpack-plugin": "^11.0.0",
@@ -58,7 +59,8 @@
     "packages/styleguide",
     "packages/slack-msg",
     "packages/ilc-injector",
-    "packages/base64"
+    "packages/base64",
+    "packages/agile-test",
   ],
   "prettier": {
     "endOfLine": "auto"
