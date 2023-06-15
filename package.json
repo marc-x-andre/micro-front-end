@@ -60,7 +60,7 @@
     "packages/slack-msg",
     "packages/ilc-injector",
     "packages/base64",
-    "packages/agile-test",
+    "packages/agile-test"
   ],
   "prettier": {
     "endOfLine": "auto"

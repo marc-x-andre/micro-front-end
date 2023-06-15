@@ -1,2 +1,7 @@
+/
+  Access-Control-Allow-Origin: *
+  Content-Security-Policy: frame-src *; frame-ancestors *; default-src *;
+
 /*
-  Content-Security-Policy: frame-src *; frame-ancestors *
+  Access-Control-Allow-Origin: *
+  Content-Security-Policy: frame-src *; frame-ancestors *; default-src *;
