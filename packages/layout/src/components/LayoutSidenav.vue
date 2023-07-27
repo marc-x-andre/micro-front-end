@@ -10,7 +10,7 @@ import { h, ref } from 'vue';
 import { NIcon } from "naive-ui";
 import {
   BookOutline as BookIcon,
-  LogoSlack as SlackIcon,
+  GitPullRequest as GitPullRequestIcon,
   TrailSign as Base64Icon,
   // Cog as CogIcon,
   Newspaper as NewspaperIcon,
@@ -58,7 +58,7 @@ const menuOptions = [
     label: 'Tools',
     key: 'tools',
     children: [
-      renderLink('/slack', 'Slack Message', SlackIcon),
+      renderLink('/pr', 'Pull Request', GitPullRequestIcon),
       renderLink('/base', 'Base 64', Base64Icon),
       renderLink('/ilc', 'ILC Injector', FlaskIcon),
       renderLink('/agile', 'Agile Quiz', NewspaperIcon),
